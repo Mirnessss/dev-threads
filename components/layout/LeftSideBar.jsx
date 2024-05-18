@@ -1,8 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 import Menu from "./Menu";
+import { SignOutButton, SignedIn, UserButton } from "@clerk/nextjs";
+import { Logout } from "@mui/icons-material";
 
 const LeftSideBar = () => {
   return (
@@ -43,6 +47,19 @@ const LeftSideBar = () => {
         <Menu />
 
         <hr />
+
+        <div className="flex gap-4 items-center">
+          <UserButton />
+          <p className="text-light-1 text-body-bold">Manage Account</p>
+        </div>
+        <SignedIn>
+          <SignOutButton>
+            <div className="flex cursor-pointer gap-4 items-center">
+              <Logout sx={{ color: "white", fontSize: "32" }} />
+              <p className="text-body-bold text-light-1 ml-1">Log out</p>
+            </div>
+          </SignOutButton>
+        </SignedIn>
       </div>
     </div>
   );
