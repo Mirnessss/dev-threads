@@ -49,17 +49,9 @@ const LeftSideBar = () => {
         <hr />
 
         <div className="flex gap-4 items-center">
-          <UserButton />
+          <UserButton afterSignOutUrl="/sign-in" />
           <p className="text-light-1 text-body-bold">Manage Account</p>
         </div>
-        <SignedIn>
-          <SignOutButton>
-            <div className="flex cursor-pointer gap-4 items-center">
-              <Logout sx={{ color: "white", fontSize: "32" }} />
-              <p className="text-body-bold text-light-1 ml-1">Log out</p>
-            </div>
-          </SignOutButton>
-        </SignedIn>
       </div>
     </div>
   );
